@@ -1,0 +1,721 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+d:\Users\william wang\Desktop\MCU\¼ÓÆµÆ×NC\BT4805P\GPIO.uvproj
+Project File Date:  09/14/2020
+
+<h2>Output:</h2>
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10665
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10665 bytes programmed.
+Flash Verify Done: 10665 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10665
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10665 bytes programmed.
+Flash Verify Done: 10665 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10665
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10665 bytes programmed.
+Flash Verify Done: 10665 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10665
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10665 bytes programmed.
+Flash Verify Done: 10665 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10662
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10662 bytes programmed.
+Flash Verify Done: 10662 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(377): warning C280: 'l': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=747 code=10742
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10742 bytes programmed.
+Flash Verify Done: 10742 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(377): warning C280: 'l': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=747 code=10742
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10742 bytes programmed.
+Flash Verify Done: 10742 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(377): warning C280: 'l': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=747 code=10742
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10742 bytes programmed.
+Flash Verify Done: 10742 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(377): warning C280: 'l': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=747 code=10742
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10742 bytes programmed.
+Flash Verify Done: 10742 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(378): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00B3H
+Program Size: data=9.1 xdata=798 code=10858
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10858 bytes programmed.
+Flash Verify Done: 10858 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(378): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00B3H
+Program Size: data=9.1 xdata=798 code=10858
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10858 bytes programmed.
+Flash Verify Done: 10858 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(378): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00B3H
+Program Size: data=9.1 xdata=798 code=10858
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10858 bytes programmed.
+Flash Verify Done: 10858 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(378): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00B3H
+Program Size: data=9.1 xdata=798 code=10854
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10854 bytes programmed.
+Flash Verify Done: 10854 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(378): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00B3H
+Program Size: data=9.1 xdata=798 code=10858
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10858 bytes programmed.
+Flash Verify Done: 10858 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(645): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  0094H
+Program Size: data=9.1 xdata=800 code=10846
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10846 bytes programmed.
+Flash Verify Done: 10846 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(645): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  0094H
+Program Size: data=9.1 xdata=800 code=10846
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10846 bytes programmed.
+Flash Verify Done: 10846 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(645): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007BH
+Program Size: data=9.1 xdata=775 code=10802
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Build target 'OLED'
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007BH
+Program Size: data=9.1 xdata=775 code=10802
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10802 bytes programmed.
+Flash Verify Done: 10802 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(632): warning C280: 'pos': unreferenced local variable
+MAIN.C(646): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007BH
+Program Size: data=9.1 xdata=775 code=10802
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 4 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10802 bytes programmed.
+Flash Verify Done: 10802 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(632): warning C280: 'pos': unreferenced local variable
+MAIN.C(646): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007BH
+Program Size: data=9.1 xdata=775 code=10802
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 4 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10802 bytes programmed.
+Flash Verify Done: 10802 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(645): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007AH
+Program Size: data=9.1 xdata=774 code=10798
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10798 bytes programmed.
+Flash Verify Done: 10798 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+MAIN.C(645): warning C280: 'i': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  007AH
+Program Size: data=9.1 xdata=774 code=10798
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10798 bytes programmed.
+Flash Verify Done: 10798 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10855
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10855 bytes programmed.
+Flash Verify Done: 10855 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10853
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10853 bytes programmed.
+Flash Verify Done: 10853 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(594): warning C280: 'l': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  009AH
+Program Size: data=9.1 xdata=773 code=10853
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10853 bytes programmed.
+Flash Verify Done: 10853 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=746 code=10808
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10779
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10779 bytes programmed.
+Flash Verify Done: 10779 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10779
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10779 bytes programmed.
+Flash Verify Done: 10779 bytes verified.
+Rebuild target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+compiling Common.c...
+compiling Delay.c...
+assembling STARTUP.A51...
+compiling oled.c...
+OLED\oled.c(177): warning C294: unreachable code
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C2H
+Program Size: data=9.1 xdata=814 code=10778
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10778 bytes programmed.
+Flash Verify Done: 10778 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C2H
+Program Size: data=9.1 xdata=814 code=10777
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10777 bytes programmed.
+Flash Verify Done: 10777 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=764 code=10727
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C2H
+Program Size: data=9.1 xdata=814 code=10777
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10777 bytes programmed.
+Flash Verify Done: 10777 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10797
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10797 bytes programmed.
+Flash Verify Done: 10797 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10810
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10810 bytes programmed.
+Flash Verify Done: 10810 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10810
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10810 bytes programmed.
+Flash Verify Done: 10810 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C2H
+Program Size: data=9.1 xdata=814 code=10790
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10790 bytes programmed.
+Flash Verify Done: 10790 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C3H
+Program Size: data=9.1 xdata=815 code=10810
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10810 bytes programmed.
+Flash Verify Done: 10810 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(592): warning C280: 'hight1': unreferenced local variable
+linking...
+*** WARNING L18: SEGMENT DOES NOT FIT IN PDATA PAGE
+    SPACE:   XDATA   
+    SEGMENT: _PDATA_GROUP_
+    LENGTH:  00C2H
+Program Size: data=9.1 xdata=814 code=10790
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 2 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10790 bytes programmed.
+Flash Verify Done: 10790 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(666): error C202: 'h': undefined identifier
+MAIN.C(668): error C202: 'h': undefined identifier
+Target not created
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(666): error C202: 'h': undefined identifier
+Target not created
+Build target 'OLED'
+compiling MAIN.C...
+MAIN.C(657): warning C280: 'i': unreferenced local variable
+linking...
+Program Size: data=9.1 xdata=699 code=10604
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 1 Warning(s).
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=697 code=10604
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10604 bytes programmed.
+Flash Verify Done: 10604 bytes verified.
+Build target 'OLED'
+compiling MAIN.C...
+linking...
+Program Size: data=9.1 xdata=696 code=10603
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 0 Warning(s).
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10603 bytes programmed.
+Flash Verify Done: 10603 bytes verified.
+Load "d:\\Users\\william wang\\Desktop\\MCU\\¼ÓÆµÆ×NC\\BT4805P\\Output\\OLED" 
+Flash Erase Done.
+Flash Write Done: 10603 bytes programmed.
+Flash Verify Done: 10603 bytes verified.
+Clean started: Project: 'GPIO'
+   deleting intermediate output files for target 'OLED'

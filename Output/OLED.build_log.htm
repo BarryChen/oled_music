@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.11.2.0
+Copyright (C) 2014 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: yezy yezy, yezy, LIC=PEGVE-586G9-MX7U8-3M9FF-TN50I-9VA5D
+ 
+Tool Versions:
+Toolchain:       PK51 Prof. Developers Kit  Version: 9.53.0.0
+Toolchain Path:  C:\Keil_v5\C51\BIN
+C Compiler:      C51.exe V9.53.0.0
+Assembler:       A51.exe V8.02b
+Linker/Locator:  BL51.exe V6.22
+Library Manager: LIB51.exe V4.30.0.2
+Hex Converter:   OH51.exe V2.7.0.0
+CPU DLL:         S8051.DLL V3.95.0.0
+Dialog DLL:      DP51.DLL V2.62.0.1
+Target DLL:      Nuvoton_8051_Keil_uVision_Driver.dll V1.09
+Dialog DLL:      TP51.DLL V2.58
+ 
+<h2>Project:</h2>
+D:\岭克软件\LinK-BT4805P\自调软件\MCU\BT4805P\GPIO.uvproj
+Project File Date:  06/12/2020
+
+<h2>Output:</h2>
+Rebuild target 'OLED'
+compiling MAIN.C...
+compiling Common.c...
+compiling Delay.c...
+assembling STARTUP.A51...
+compiling oled.c...
+OLED\oled.c(120): warning C294: unreachable code
+linking...
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_OLED_SHOWPPIMAGE32X32?OLED
+    CALLER1: ?PR?PININTERRUPT_ISR?MAIN
+    CALLER2: ?C_C51STARTUP
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?_OLED_SHOWCHAR?OLED
+    CALLER1: ?PR?PININTERRUPT_ISR?MAIN
+    CALLER2: ?C_C51STARTUP
+Program Size: data=110.1 xdata=512 code=12232
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 3 Warning(s).
+</pre>
+</body>
+</html>
+ze: data=106.1 xdata=512 code=12264
+creating hex file from ".\Output\OLED"...
+".\Output\OLED" - 0 Error(s), 4 Warning(s).
+tifier
+MAIN.C(777): error C202: 'time': undefined identifier
+compiling Common.c...
+compiling Delay.c...
+assembling STARTUP.A51...
+compiling oled.c...
+OLED\oled.c(120): warning C294: unreachable code
+Target not created.
