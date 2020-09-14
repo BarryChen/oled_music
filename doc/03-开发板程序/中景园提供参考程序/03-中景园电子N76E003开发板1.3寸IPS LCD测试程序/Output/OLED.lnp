@@ -1,0 +1,8 @@
+".\Output\MAIN.obj",
+".\Output\Common.obj",
+".\Output\Delay.obj",
+".\Output\STARTUP.obj",
+".\Output\oled.obj" 
+TO ".\Output\OLED" 
+PRINT(".\LST\OLED.m51") RAMSIZE(256) 
+DISABLEWARNING (16) 

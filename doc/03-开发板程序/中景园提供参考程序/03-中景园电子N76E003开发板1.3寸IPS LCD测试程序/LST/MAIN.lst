@@ -1,0 +1,139 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              03/25/2019 14:11:59 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Output\MAIN.obj
+COMPILER INVOKED BY: C:\Keil_v4\C51\BIN\C51.EXE MAIN.C LARGE OPTIMIZE(9,SPEED) BROWSE INCDIR(.\Include;.\OLED) DEFINE(FO
+                    -SC_160000) DEBUG OBJECTEXTEND PRINT(.\LST\MAIN.lst) TABS(2) OBJECT(.\Output\MAIN.obj)
+
+line level    source
+
+   1          //////////////////////////////////////////////////////////////////////////////////   
+   2          //本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3          //中景园电子
+   4          //店铺地址：http://shop73023976.taobao.com
+   5          //
+   6          //  文 件 名   : main.c
+   7          //  版 本 号   : v2.0
+   8          //  作    者   : HuangKai
+   9          //  生成日期   : 2018/10/01
+  10          //  最近修改   : 
+  11          //  功能描述   : 新唐N76E003单片机驱动1.3寸IPS 接口显示屏
+  12          //              说明: 
+  13          //              ----------------------------------------------------------------
+  14          //            显示屏    开发板
+  15          //              GND     接电源地
+  16          //              VCC     接3.3v电源
+  17          //              SCL       接P10（SCL）
+  18          //              SDA       接P00（SDA）
+  19          //              RES     接P14
+  20          //              DC      接P13
+  21          //              blk     接P15  这个默认可以不接 P15管脚N76E003.h中默认没有添加需要用户自己添加一下sbit P15  
+             -      = P1^5;           
+  22          //              ----------------------------------------------------------------
+  23          // 作    者   : HuangKai
+  24          //版权所有，盗版必究。
+  25          //Copyright(C) 中景园电子2018/10/01
+  26          //All rights reserved
+  27          //******************************************************************************/
+  28          #include <stdio.h>
+  29          #include "N76E003.h"
+  30          #include "Common.h"
+  31          #include "Delay.h"
+  32          #include "SFR_Macro.h"
+  33          #include "Function_Define.h"
+  34          #include "oled.h"
+  35          #include "bmp.h"
+  36          UINT8 ref=0;//刷新显示
+  37          UINT16 vx=15542,vy=11165;  //比例因子，此值除以1000之后表示多少个AD值代表一个像素点
+  38          UINT16 chx=140,chy=146;//默认像素点坐标为0时的AD起始值
+  39          void xianshi()//显示信息
+  40          {   
+  41   1        UINT16 lx,ly;
+  42   1        BACK_COLOR=WHITE;
+  43   1        POINT_COLOR=RED;  
+  44   1        showhanzi(10,0,0);  //中
+  45   1        showhanzi(45,0,1);  //景
+  46   1        showhanzi(80,0,2);  //园
+  47   1        showhanzi(115,0,3);  //电
+  48   1        showhanzi(150,0,4);  //子
+  49   1        LCD_ShowString(10,35,"1.3 IPS-SPI 240*320");
+  50   1        LCD_ShowString(10,55,"LCD_W:"); LCD_ShowNum(70,55,LCD_W,3);
+  51   1        LCD_ShowString(110,55,"LCD_H:");LCD_ShowNum(160,55,LCD_H,3);  
+  52   1          LCD_ShowString(10,35,"1.3 IPS-SPI 240*320");
+  53   1        lx=10;ly=75;      
+C51 COMPILER V9.52.0.0   MAIN                                                              03/25/2019 14:11:59 PAGE 2   
+
+  54   1      }
+  55          
+  56          
+  57          
+  58          void showimage() //显示40*40图片；这里因为本单片机空间比较小；把图片显示去掉了；
+  59          {
+  60   1          int i,j,k; 
+  61   1      
+  62   1        for(k=2;k<6;k++)
+  63   1        {
+  64   2            for(j=0;j<6;j++)
+  65   2          { 
+  66   3            Address_set(40*j,40*k,40*j+39,40*k+39);   //坐标设置
+  67   3              for(i=0;i<1600;i++)
+  68   3             {  
+  69   4                  
+  70   4              //   LCD_WR_DATA8(image[i*2+1]);   //显示40*40图片；这里因为本单片机空间比较小；把图片显示去掉了；
+  71   4              // LCD_WR_DATA8(image[i*2]);      //显示40*40图片；这里因为本单片机空间比较小；把图片显示去掉了； 
+  72   4             }  
+  73   3           }
+  74   2        }
+  75   1        ref=0;
+  76   1      }
+  77          void main (void) 
+  78          {
+  79   1        unsigned char i,t;
+  80   1        Set_All_GPIO_Quasi_Mode;          // Define in Function_define.h
+  81   1        InitialUART0_Timer3(115200);
+  82   1        set_CLOEN;  
+  83   1         Lcd_Init();      //初始化OLED  
+  84   1        
+  85   1        LCD_Clear(WHITE); //清屏
+  86   1        BACK_COLOR=BLACK;;POINT_COLOR=WHITE; 
+  87   1      
+  88   1        xianshi(); //显示信息
+  89   1        //  showimage(); //显示40*40图片
+  90   1        while(1)
+  91   1        {
+  92   2          i--;
+  93   2      
+  94   2          clr_GPIO1;                        // Tiny board GPIO1 LED define in Common.h
+  95   2            Timer2_Delay1ms(300);
+  96   2            set_GPIO1;
+  97   2            Timer2_Delay1ms(300);
+  98   2            Send_Data_To_UART0(0x55);         //UART0 send ascii "U"
+  99   2          
+ 100   2          P3M1 = 0xff;
+ 101   2          P3M2 = 0x00;
+ 102   2          P3M1 = 0x00;
+ 103   2          P3M2 = 0x00;
+ 104   2          if(P30) P10 = 1; 
+ 105   2          else P10 = 0;
+ 106   2          i += 6;
+ 107   2        }   
+ 108   1        
+ 109   1      }
+*** WARNING C280 IN LINE 79 OF MAIN.C: 't': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    497    ----
+   CONSTANT SIZE    =     34    ----
+C51 COMPILER V9.52.0.0   MAIN                                                              03/25/2019 14:11:59 PAGE 3   
+
+   XDATA SIZE       =      9      10
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,78 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              01/06/2020 16:13:39 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Output\MAIN.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE MAIN.C OPTIMIZE(4,SPEED) BROWSE INCDIR(.\Include;.\OLED) DEFINE(FOSC_160
+                    -000) DEBUG OBJECTEXTEND PRINT(.\LST\MAIN.lst) TABS(2) OBJECT(.\Output\MAIN.obj)
+
+line level    source
+
+   1          //////////////////////////////////////////////////////////////////////////////////   
+   2          //本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3          //中景园电子
+   4          //店铺地址：http://shop73023976.taobao.com
+   5          //
+   6          //  文 件 名   : main.c
+   7          //  版 本 号   : v2.0
+   8          //  作    者   : HuangKai
+   9          //  生成日期   : 2018/10/01
+  10          //  最近修改   : 
+  11          //  功能描述   : 新唐N76E003单片机驱动LED灯实验
+  12          
+  13          // 作    者   : HuangKai
+  14          //版权所有，盗版必究。
+  15          //Copyright(C) 中景园电子2018/10/01
+  16          //All rights reserved
+  17          //******************************************************************************/
+  18          #include <stdio.h>
+  19          #include "N76E003.h"
+  20          #include "Common.h"
+  21          #include "Delay.h"
+  22          #include "SFR_Macro.h"
+  23          #include "Function_Define.h"
+  24          
+  25          void main (void) 
+  26          {
+  27   1        unsigned char i,t;
+  28   1        Set_All_GPIO_Quasi_Mode;          // Define in Function_define.h
+  29   1        InitialUART0_Timer3(115200);
+  30   1        set_CLOEN;  
+  31   1        
+  32   1          t=' ';
+  33   1        while(1)
+  34   1        {
+  35   2          i--;
+  36   2      
+  37   2          clr_GPIO1;                        // Tiny board GPIO1 LED define in Common.h
+  38   2            Timer2_Delay1ms(300);
+  39   2            set_GPIO1;
+  40   2            Timer2_Delay1ms(300);
+  41   2            Send_Data_To_UART0(0x55);         //UART0 send ascii "U"
+  42   2          
+  43   2          P3M1 = 0xff;
+  44   2          P3M2 = 0x00;
+  45   2          P3M1 = 0x00;
+  46   2          P3M2 = 0x00;
+  47   2          if(P30) P10 = 1; 
+  48   2          else P10 = 0;
+  49   2          i += 6;
+  50   2        }   
+  51   1        
+  52   1      }
+
+
+C51 COMPILER V9.59.0.0   MAIN                                                              01/06/2020 16:13:39 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     89    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

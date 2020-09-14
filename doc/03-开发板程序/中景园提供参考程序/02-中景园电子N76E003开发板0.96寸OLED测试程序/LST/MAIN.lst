@@ -1,0 +1,129 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              06/03/2020 17:37:24 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Output\MAIN.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE MAIN.C OPTIMIZE(4,SPEED) BROWSE INCDIR(.\Include;.\OLED) DEFINE(FOSC_160000
+                    -) DEBUG OBJECTEXTEND PRINT(.\LST\MAIN.lst) TABS(2) OBJECT(.\Output\MAIN.obj)
+
+line level    source
+
+   1          //////////////////////////////////////////////////////////////////////////////////   
+   2          //±¾³ÌÐòÖ»¹©Ñ§Ï°Ê¹ÓÃ£¬Î´¾­×÷ÕßÐí¿É£¬²»µÃÓÃÓÚÆäËüÈÎºÎÓÃÍ¾
+   3          //ÖÐ¾°Ô°µç×Ó
+   4          //µêÆÌµØÖ·£ºhttp://shop73023976.taobao.com
+   5          //
+   6          //  ÎÄ ¼þ Ãû   : main.c
+   7          //  °æ ±¾ ºÅ   : v2.0
+   8          //  ×÷    Õß   : HuangKai
+   9          //  Éú³ÉÈÕÆÚ   : 2018/10/01
+  10          //  ×î½üÐÞ¸Ä   : 
+  11          //  ¹¦ÄÜÃèÊö   : ÐÂÌÆN76E003µ¥Æ¬»úÇý¶¯0.96´çOLED SPI½Ó¿ÚÏÔÊ¾ÆÁ
+  12          //              ËµÃ÷: 
+  13          //              ----------------------------------------------------------------
+  14          //            ÏÔÊ¾ÆÁ    ¿ª·¢°å
+  15          //              GND     ½ÓµçÔ´µØ
+  16          //              VCC     ½Ó3.3vµçÔ´
+  17          //              D0      ½ÓP10£¨SCL£©
+  18          //              D1      ½ÓP00£¨SDA£©
+  19          //              RES     ½ÓP14
+  20          //              DC      ½ÓP13
+  21          //              CS      ½ÓP15   P15¹Ü½ÅN76E003.hÖÐÄ¬ÈÏÃ»ÓÐÌí¼ÓÐèÒªÓÃ»§×Ô¼ºÌí¼ÓÒ»ÏÂsbit P15        = P1^5;      
+             -     
+  22          //              ----------------------------------------------------------------
+  23          // ×÷    Õß   : HuangKai
+  24          //°æÈ¨ËùÓÐ£¬µÁ°æ±Ø¾¿¡£
+  25          //Copyright(C) ÖÐ¾°Ô°µç×Ó2018/10/01
+  26          //All rights reserved
+  27          //******************************************************************************/
+  28          #include <stdio.h>
+  29          #include "N76E003.h"
+  30          #include "Common.h"
+  31          #include "Delay.h"
+  32          #include "SFR_Macro.h"
+  33          #include "Function_Define.h"
+  34          #include "oled.h"
+  35          #include "bmp.h"
+  36          
+  37          void main (void) 
+  38          {
+  39   1        unsigned char i,t;
+  40   1        Set_All_GPIO_Quasi_Mode;          // Define in Function_define.h
+  41   1        InitialUART0_Timer3(115200);
+  42   1        set_CLOEN;  
+  43   1                OLED_Init();      //³õÊ¼»¯OLED  
+  44   1        
+  45   1          t=' ';
+  46   1        while(1)
+  47   1        {
+  48   2          i--;
+  49   2          OLED_Clear();
+  50   2      
+  51   2          OLED_ShowCHinese(0,0,0);//ÖÐ
+  52   2          OLED_ShowCHinese(18,0,1);//¾°
+  53   2          OLED_ShowCHinese(36,0,2);//Ô°
+C51 COMPILER V9.52.0.0   MAIN                                                              06/03/2020 17:37:24 PAGE 2   
+
+  54   2          OLED_ShowCHinese(54,0,3);//µç
+  55   2          OLED_ShowCHinese(72,0,4);//×Ó
+  56   2          OLED_ShowCHinese(90,0,5);//¿Æ
+  57   2          OLED_ShowCHinese(108,0,6);//¼¼
+  58   2          OLED_ShowCHinese(0,2,7);//ÖÐ
+  59   2          OLED_ShowCHinese(18,2,8);//¾°
+  60   2          OLED_ShowString(34,2,"N76E003 BRD");
+  61   2        //  OLED_ShowString(8,2,"ZHONGJINGYUAN");  
+  62   2          OLED_ShowString(20,4,"2018/10/29");  
+  63   2          OLED_ShowString(0,6,"ASCII:");  
+  64   2          OLED_ShowString(63,6,"CODE:");  
+  65   2          OLED_ShowChar(48,6,t);//ÏÔÊ¾ASCII×Ö·û    
+  66   2          t++;
+  67   2          if(t>'~')t=' ';
+  68   2          OLED_ShowNum(103,6,t,3,16);//ÏÔÊ¾ASCII×Ö·ûµÄÂëÖµ  
+  69   2            
+  70   2          
+  71   2          delay_ms(500);
+  72   2            delay_ms(500);
+  73   2            
+  74   2              delay_ms(500);
+  75   2              
+  76   2                delay_ms(500);
+  77   2                
+  78   2                  delay_ms(500);
+  79   2          OLED_Clear();
+  80   2          delay_ms(500);
+  81   2          OLED_DrawBMP(0,0,128,8,BMP1);  //Í¼Æ¬ÏÔÊ¾(Í¼Æ¬ÏÔÊ¾É÷ÓÃ£¬Éú³ÉµÄ×Ö±í½Ï´ó£¬»áÕ¼ÓÃ½Ï¶à¿Õ¼ä£¬FLASH¿Õ¼ä8KÒÔÏÂÉ
+             -÷ÓÃ)
+  82   2          delay_ms(500);
+  83   2          OLED_DrawBMP(0,0,128,8,BMP2);
+  84   2          delay_ms(500);
+  85   2          
+  86   2          clr_GPIO1;                        // Tiny board GPIO1 LED define in Common.h
+  87   2            Timer2_Delay1ms(300);
+  88   2            set_GPIO1;
+  89   2            Timer2_Delay1ms(300);
+  90   2            Send_Data_To_UART0(0x55);         //UART0 send ascii "U"
+  91   2          
+  92   2          P3M1 = 0xff;
+  93   2          P3M2 = 0x00;
+  94   2          P3M1 = 0x00;
+  95   2          P3M2 = 0x00;
+  96   2          if(P30) P10 = 1; 
+  97   2          else P10 = 0;
+  98   2          i += 6;
+  99   2        }   
+ 100   1        
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    370    ----
+   CONSTANT SIZE    =   2084    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

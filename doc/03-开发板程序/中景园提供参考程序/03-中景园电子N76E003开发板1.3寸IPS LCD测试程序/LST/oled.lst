@@ -1,0 +1,504 @@
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE OLED
+OBJECT MODULE PLACED IN .\Output\oled.obj
+COMPILER INVOKED BY: C:\C51-V4\C51\BIN\C51.EXE OLED\oled.c LARGE OPTIMIZE(9,SPEED) BROWSE INCDIR(.\Include;.\OLED) DEFIN
+                    -E(FOSC_160000) DEBUG OBJECTEXTEND PRINT(.\LST\oled.lst) TABS(2) OBJECT(.\Output\oled.obj)
+
+line level    source
+
+   1          //////////////////////////////////////////////////////////////////////////////////   
+   2          //本程序只供学习使用，未经作者许可，不得用于其它任何用途
+   3          //中景园电子
+   4          //店铺地址：http://shop73023976.taobao.com/?spm=2013.1.0.0.M4PqC2
+   5          //
+   6          //  文 件 名   : main.c
+   7          //  版 本 号   : v2.0
+   8          //  作    者   : HuangKai
+   9          //  生成日期   : 2014-0101
+  10          //  最近修改   : 
+  11          //  功能描述   : OLED 4接口演示例程(51系列)
+  12          //              说明: 
+  13          //              ----------------------------------------------------------------
+  14          //              GND    电源地
+  15          //              VCC  接5V或3.3v电源
+  16          //              D0   P1^0（SCL）
+  17          //              D1   P1^1（SDA）
+  18          //              RES  接P12
+  19          //              DC   接P13
+  20          //              CS   接P14               
+  21          //              ----------------------------------------------------------------
+  22          // 修改历史   :
+  23          // 日    期   : 
+  24          // 作    者   : HuangKai
+  25          // 修改内容   : 创建文件
+  26          //版权所有，盗版必究。
+  27          //Copyright(C) 中景园电子2014/3/16
+  28          //All rights reserved
+  29          //******************************************************************************/。
+  30          #include "oled.h"
+  31          //#include "stdlib.h"
+  32          #include "oledfont.h"  
+  33          #include "Common.h"
+  34          #include "N76E003.h"
+  35          //#include "delay.h"
+  36          //OLED的显存
+  37          //存放格式如下.
+  38          //[0]0 1 2 3 ... 127  
+  39          //[1]0 1 2 3 ... 127  
+  40          //[2]0 1 2 3 ... 127  
+  41          //[3]0 1 2 3 ... 127  
+  42          //[4]0 1 2 3 ... 127  
+  43          //[5]0 1 2 3 ... 127  
+  44          //[6]0 1 2 3 ... 127  
+  45          //[7]0 1 2 3 ... 127    
+  46          
+  47          UINT16 BACK_COLOR, POINT_COLOR;   //背景色，画笔色
+  48          void delay_ms(unsigned int ms)
+  49          {                         
+  50   1        unsigned int a;
+  51   1        while(ms)
+  52   1        {
+  53   2          a=1800;
+  54   2          while(a--);
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 2   
+
+  55   2          ms--;
+  56   2        }
+  57   1        return;
+  58   1      }
+  59          
+  60          void LCD_Writ_Bus(char dat)   //串行数据写入
+  61          { 
+  62   1        UINT8 i;        
+  63   1        
+  64   1      
+  65   1        for(i=0;i<8;i++)
+  66   1        {       
+  67   2          OLED_SCLK_Clr();
+  68   2          if(dat&0x80)
+  69   2             OLED_SDIN_Set();
+  70   2          else 
+  71   2             OLED_SDIN_Clr();
+  72   2          OLED_SCLK_Set();
+  73   2          dat<<=1;   
+  74   2        }     
+  75   1      }
+  76          
+  77          void LCD_WR_DATA8(char da) //发送数据-8位参数
+  78          { //OLED_CS_Clr();
+  79   1          OLED_DC_Set();
+  80   1        LCD_Writ_Bus(da);  
+  81   1        //OLED_CS_Set();
+  82   1      }  
+  83           void LCD_WR_DATA(int da)
+  84          {// OLED_CS_Clr();
+  85   1          OLED_DC_Set();
+  86   1        LCD_Writ_Bus(da>>8);
+  87   1          LCD_Writ_Bus(da);
+  88   1        //OLED_CS_Set();
+  89   1      }   
+  90          void LCD_WR_REG(char da)   
+  91          { //  OLED_CS_Clr();
+  92   1          OLED_DC_Clr();
+  93   1        LCD_Writ_Bus(da);
+  94   1        //OLED_CS_Set();
+  95   1      }
+  96           void LCD_WR_REG_DATA(int reg,int da)
+  97          { //OLED_CS_Clr();
+  98   1          LCD_WR_REG(reg);
+  99   1        LCD_WR_DATA(da);
+ 100   1        //OLED_CS_Set();
+ 101   1      }
+ 102          
+ 103          void Address_set(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2)
+ 104          { 
+ 105   1        LCD_WR_REG(0x2a);
+ 106   1         LCD_WR_DATA8(x1>>8);
+ 107   1         LCD_WR_DATA8(x1);
+ 108   1         LCD_WR_DATA8(x2>>8);
+ 109   1         LCD_WR_DATA8(x2);
+ 110   1        
+ 111   1         LCD_WR_REG(0x2b);
+ 112   1         LCD_WR_DATA8(y1>>8);
+ 113   1         LCD_WR_DATA8(y1);
+ 114   1         LCD_WR_DATA8(y2>>8);
+ 115   1         LCD_WR_DATA8(y2);
+ 116   1      
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 3   
+
+ 117   1         LCD_WR_REG(0x2C);                       
+ 118   1      }
+ 119          
+ 120          void Lcd_Init(void)
+ 121          {
+ 122   1      
+ 123   1        //OLED_CS_Clr();  //打开片选使能
+ 124   1         OLED_RST_Clr();
+ 125   1        delay_ms(20);
+ 126   1        OLED_RST_Set();
+ 127   1        delay_ms(20);
+ 128   1        OLED_BLK_Set();
+ 129   1        
+ 130   1      //************* Start Initial Sequence **********// 
+ 131   1      LCD_WR_REG(0x36); 
+ 132   1      LCD_WR_DATA8(0x00);
+ 133   1      
+ 134   1      LCD_WR_REG(0x3A); 
+ 135   1      LCD_WR_DATA8(0x05);
+ 136   1      
+ 137   1      LCD_WR_REG(0xB2);
+ 138   1      LCD_WR_DATA8(0x0C);
+ 139   1      LCD_WR_DATA8(0x0C);
+ 140   1      LCD_WR_DATA8(0x00);
+ 141   1      LCD_WR_DATA8(0x33);
+ 142   1      LCD_WR_DATA8(0x33);
+ 143   1      
+ 144   1      LCD_WR_REG(0xB7); 
+ 145   1      LCD_WR_DATA8(0x35);  
+ 146   1      
+ 147   1      LCD_WR_REG(0xBB);
+ 148   1      LCD_WR_DATA8(0x19);
+ 149   1      
+ 150   1      LCD_WR_REG(0xC0);
+ 151   1      LCD_WR_DATA8(0x2C);
+ 152   1      
+ 153   1      LCD_WR_REG(0xC2);
+ 154   1      LCD_WR_DATA8(0x01);
+ 155   1      
+ 156   1      LCD_WR_REG(0xC3);
+ 157   1      LCD_WR_DATA8(0x12);   
+ 158   1      
+ 159   1      LCD_WR_REG(0xC4);
+ 160   1      LCD_WR_DATA8(0x20);  
+ 161   1      
+ 162   1      LCD_WR_REG(0xC6); 
+ 163   1      LCD_WR_DATA8(0x0F);    
+ 164   1      
+ 165   1      LCD_WR_REG(0xD0); 
+ 166   1      LCD_WR_DATA8(0xA4);
+ 167   1      LCD_WR_DATA8(0xA1);
+ 168   1      
+ 169   1      LCD_WR_REG(0xE0);
+ 170   1      LCD_WR_DATA8(0xD0);
+ 171   1      LCD_WR_DATA8(0x04);
+ 172   1      LCD_WR_DATA8(0x0D);
+ 173   1      LCD_WR_DATA8(0x11);
+ 174   1      LCD_WR_DATA8(0x13);
+ 175   1      LCD_WR_DATA8(0x2B);
+ 176   1      LCD_WR_DATA8(0x3F);
+ 177   1      LCD_WR_DATA8(0x54);
+ 178   1      LCD_WR_DATA8(0x4C);
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 4   
+
+ 179   1      LCD_WR_DATA8(0x18);
+ 180   1      LCD_WR_DATA8(0x0D);
+ 181   1      LCD_WR_DATA8(0x0B);
+ 182   1      LCD_WR_DATA8(0x1F);
+ 183   1      LCD_WR_DATA8(0x23);
+ 184   1      
+ 185   1      LCD_WR_REG(0xE1);
+ 186   1      LCD_WR_DATA8(0xD0);
+ 187   1      LCD_WR_DATA8(0x04);
+ 188   1      LCD_WR_DATA8(0x0C);
+ 189   1      LCD_WR_DATA8(0x11);
+ 190   1      LCD_WR_DATA8(0x13);
+ 191   1      LCD_WR_DATA8(0x2C);
+ 192   1      LCD_WR_DATA8(0x3F);
+ 193   1      LCD_WR_DATA8(0x44);
+ 194   1      LCD_WR_DATA8(0x51);
+ 195   1      LCD_WR_DATA8(0x2F);
+ 196   1      LCD_WR_DATA8(0x1F);
+ 197   1      LCD_WR_DATA8(0x1F);
+ 198   1      LCD_WR_DATA8(0x20);
+ 199   1      LCD_WR_DATA8(0x23);
+ 200   1      
+ 201   1      LCD_WR_REG(0x21); 
+ 202   1      
+ 203   1      LCD_WR_REG(0x11); 
+ 204   1      //Delay (120); 
+ 205   1      
+ 206   1      LCD_WR_REG(0x29); 
+ 207   1       
+ 208   1      } 
+ 209          
+ 210          //清屏函数
+ 211          //Color:要清屏的填充色
+ 212          void LCD_Clear(UINT16 Color)
+ 213          {
+ 214   1        UINT16 i,j;   
+ 215   1        Address_set(0,0,LCD_W-1,LCD_H-1);
+ 216   1          for(i=0;i<LCD_W;i++)
+ 217   1         {
+ 218   2          for (j=0;j<LCD_H;j++)
+ 219   2            {
+ 220   3                LCD_WR_DATA(Color);        
+ 221   3            }
+ 222   2      
+ 223   2          }
+ 224   1      }
+ 225          
+ 226          
+ 227          
+ 228          //在指定位置显示一个汉字(32*33大小)
+ 229          //dcolor为内容颜色，gbcolor为背静颜色
+ 230          void showhanzi(unsigned int x,unsigned int y,unsigned char index) 
+ 231          {  
+ 232   1        unsigned char i,j;
+ 233   1        unsigned char *temp=hanzi;    
+ 234   1          Address_set(x,y,x+31,y+31); //设置区域      
+ 235   1        temp+=index*128;  
+ 236   1        for(j=0;j<128;j++)
+ 237   1        {
+ 238   2          for(i=0;i<8;i++)
+ 239   2          {          
+ 240   3            if((*temp&(1<<i))!=0)
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 5   
+
+ 241   3            {
+ 242   4              LCD_WR_DATA(POINT_COLOR);
+ 243   4            } 
+ 244   3            else
+ 245   3            {
+ 246   4              LCD_WR_DATA(BACK_COLOR);
+ 247   4            }   
+ 248   3          }
+ 249   2          temp++;
+ 250   2         }
+ 251   1      }
+ 252          //画点
+ 253          //POINT_COLOR:此点的颜色
+ 254          void LCD_DrawPoint(UINT16 x,UINT16 y)
+ 255          {
+ 256   1        Address_set(x,y,x,y);//设置光标位置 
+ 257   1        LCD_WR_DATA(POINT_COLOR);       
+ 258   1      }    
+ 259          //画一个大点
+ 260          //POINT_COLOR:此点的颜色
+ 261          void LCD_DrawPoint_big(UINT16 x,UINT16 y)
+ 262          {
+ 263   1        LCD_Fill(x-1,y-1,x+1,y+1,POINT_COLOR);
+ 264   1      } 
+ 265          //在指定区域内填充指定颜色
+ 266          //区域大小:
+ 267          //  (xend-xsta)*(yend-ysta)
+ 268          void LCD_Fill(UINT16 xsta,UINT16 ysta,UINT16 xend,UINT16 yend,UINT16 color)
+ 269          {          
+ 270   1        UINT16 i,j; 
+ 271   1        Address_set(xsta,ysta,xend,yend);      //设置光标位置 
+ 272   1        for(i=ysta;i<=yend;i++)
+ 273   1        {                               
+ 274   2          for(j=xsta;j<=xend;j++)LCD_WR_DATA(color);//设置光标位置      
+ 275   2        }                   
+ 276   1      }  
+ 277          //画线
+ 278          //x1,y1:起点坐标
+ 279          //x2,y2:终点坐标  
+ 280          void LCD_DrawLine(UINT16 x1, UINT16 y1, UINT16 x2, UINT16 y2)
+ 281          {
+ 282   1        UINT16 t; 
+ 283   1        int xerr=0,yerr=0,delta_x,delta_y,distance; 
+ 284   1        int incx,incy,uRow,uCol; 
+ 285   1      
+ 286   1        delta_x=x2-x1; //计算坐标增量 
+ 287   1        delta_y=y2-y1; 
+ 288   1        uRow=x1; 
+ 289   1        uCol=y1; 
+ 290   1        if(delta_x>0)incx=1; //设置单步方向 
+ 291   1        else if(delta_x==0)incx=0;//垂直线 
+ 292   1        else {incx=-1;delta_x=-delta_x;} 
+ 293   1        if(delta_y>0)incy=1; 
+ 294   1        else if(delta_y==0)incy=0;//水平线 
+ 295   1        else{incy=-1;delta_y=-delta_y;} 
+ 296   1        if( delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴 
+ 297   1        else distance=delta_y; 
+ 298   1        for(t=0;t<=distance+1;t++ )//画线输出 
+ 299   1        {  
+ 300   2          LCD_DrawPoint(uRow,uCol);//画点 
+ 301   2          xerr+=delta_x ; 
+ 302   2          yerr+=delta_y ; 
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 6   
+
+ 303   2          if(xerr>distance) 
+ 304   2          { 
+ 305   3            xerr-=distance; 
+ 306   3            uRow+=incx; 
+ 307   3          } 
+ 308   2          if(yerr>distance) 
+ 309   2          { 
+ 310   3            yerr-=distance; 
+ 311   3            uCol+=incy; 
+ 312   3          } 
+ 313   2        }  
+ 314   1      }    
+ 315          //画矩形
+ 316          void LCD_DrawRectangle(UINT16 x1, UINT16 y1, UINT16 x2, UINT16 y2)
+ 317          {
+ 318   1        LCD_DrawLine(x1,y1,x2,y1);
+ 319   1        LCD_DrawLine(x1,y1,x1,y2);
+ 320   1        LCD_DrawLine(x1,y2,x2,y2);
+ 321   1        LCD_DrawLine(x2,y1,x2,y2);
+ 322   1      }
+ 323          //在指定位置画一个指定大小的圆
+ 324          //(x,y):中心点
+ 325          //r    :半径
+ 326          void Draw_Circle(UINT16 x0,UINT16 y0,UINT8 r)
+ 327          {
+ 328   1        int a,b;
+ 329   1        int di;
+ 330   1        a=0;b=r;    
+ 331   1        di=3-(r<<1);             //判断下个点位置的标志
+ 332   1        while(a<=b)
+ 333   1        {
+ 334   2          LCD_DrawPoint(x0-b,y0-a);             //3           
+ 335   2          LCD_DrawPoint(x0+b,y0-a);             //0           
+ 336   2          LCD_DrawPoint(x0-a,y0+b);             //1       
+ 337   2          LCD_DrawPoint(x0-b,y0-a);             //7           
+ 338   2          LCD_DrawPoint(x0-a,y0-b);             //2             
+ 339   2          LCD_DrawPoint(x0+b,y0+a);             //4               
+ 340   2          LCD_DrawPoint(x0+a,y0-b);             //5
+ 341   2          LCD_DrawPoint(x0+a,y0+b);             //6 
+ 342   2          LCD_DrawPoint(x0-b,y0+a);             
+ 343   2          a++;
+ 344   2          //使用Bresenham算法画圆     
+ 345   2          if(di<0)di +=4*a+6;   
+ 346   2          else
+ 347   2          {
+ 348   3            di+=10+4*(a-b);   
+ 349   3            b--;
+ 350   3          } 
+ 351   2          LCD_DrawPoint(x0+a,y0+b);
+ 352   2        }
+ 353   1      } 
+ 354          //在指定位置显示一个字符
+ 355          
+ 356          //num:要显示的字符:" "--->"~"
+ 357          //mode:叠加方式(1)还是非叠加方式(0)
+ 358          //在指定位置显示一个字符
+ 359          
+ 360          //num:要显示的字符:" "--->"~"
+ 361          
+ 362          //mode:叠加方式(1)还是非叠加方式(0)
+ 363          void LCD_ShowChar(UINT16 x,UINT16 y,UINT8 num,UINT8 mode)
+ 364          {
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 7   
+
+ 365   1          UINT8 temp;
+ 366   1          UINT8 pos,t;
+ 367   1        UINT16 x0=x;
+ 368   1        UINT16 colortemp=POINT_COLOR;      
+ 369   1          if(x>LCD_W-16||y>LCD_H-16)return;     
+ 370   1        //设置窗口       
+ 371   1        num=num-' ';//得到偏移后的值
+ 372   1        Address_set(x,y,x+8-1,y+16-1);      //设置光标位置 
+ 373   1        if(!mode) //非叠加方式
+ 374   1        {
+ 375   2          for(pos=0;pos<16;pos++)
+ 376   2          { 
+ 377   3            temp=asc2_1608[(UINT16)num*16+pos];    //调用1608字体
+ 378   3            for(t=0;t<8;t++)
+ 379   3              {                 
+ 380   4                  if(temp&0x01)POINT_COLOR=colortemp;
+ 381   4              else POINT_COLOR=BACK_COLOR;
+ 382   4              LCD_WR_DATA(POINT_COLOR); 
+ 383   4              temp>>=1; 
+ 384   4              x++;
+ 385   4              }
+ 386   3            x=x0;
+ 387   3            y++;
+ 388   3          } 
+ 389   2        }else//叠加方式
+ 390   1        {
+ 391   2          for(pos=0;pos<16;pos++)
+ 392   2          {
+ 393   3              temp=asc2_1608[(UINT16)num*16+pos];    //调用1608字体
+ 394   3            for(t=0;t<8;t++)
+ 395   3              {                 
+ 396   4                  if(temp&0x01)LCD_DrawPoint(x+t,y+pos);//画一个点     
+ 397   4                  temp>>=1; 
+ 398   4              }
+ 399   3          }
+ 400   2        }
+ 401   1        POINT_COLOR=colortemp;                
+ 402   1      }   
+ 403          //m^n函数
+ 404          UINT32 mypow(UINT8 m,UINT8 n)
+ 405          {
+ 406   1        UINT32 result=1;   
+ 407   1        while(n--)result*=m;    
+ 408   1        return result;
+ 409   1      }      
+ 410          //显示2个数字
+ 411          //x,y :起点坐标  
+ 412          //len :数字的位数
+ 413          //color:颜色
+ 414          //num:数值(0~4294967295); 
+ 415          void LCD_ShowNum(UINT16 x,UINT16 y,UINT32 num,UINT8 len)
+ 416          {           
+ 417   1        UINT8 t,temp;
+ 418   1        UINT8 enshow=0;
+ 419   1        num=(UINT16)num;
+ 420   1        for(t=0;t<len;t++)
+ 421   1        {
+ 422   2          temp=(num/mypow(10,len-t-1))%10;
+ 423   2          if(enshow==0&&t<(len-1))
+ 424   2          {
+ 425   3            if(temp==0)
+ 426   3            {
+C51 COMPILER V9.52.0.0   OLED                                                              10/22/2018 10:37:20 PAGE 8   
+
+ 427   4              LCD_ShowChar(x+8*t,y,' ',0);
+ 428   4              continue;
+ 429   4            }else enshow=1; 
+ 430   3             
+ 431   3          }
+ 432   2          LCD_ShowChar(x+8*t,y,temp+48,0); 
+ 433   2        }
+ 434   1      } 
+ 435          //显示2个数字
+ 436          //x,y:起点坐标
+ 437          //num:数值(0~99);  
+ 438          void LCD_Show2Num(UINT16 x,UINT16 y,UINT16 num,UINT8 len)
+ 439          {           
+ 440   1        UINT8 t,temp;              
+ 441   1        for(t=0;t<len;t++)
+ 442   1        {
+ 443   2          temp=(num/mypow(10,len-t-1))%10;
+ 444   2          LCD_ShowChar(x+8*t,y,temp+'0',0); 
+ 445   2        }
+ 446   1      } 
+ 447          //显示字符串
+ 448          //x,y:起点坐标  
+ 449          //*p:字符串起始地址
+ 450          //用16字体
+ 451          void LCD_ShowString(UINT16 x,UINT16 y,const UINT8 *p)
+ 452          {         
+ 453   1          while(*p!='\0')
+ 454   1          {       
+ 455   2              if(x>LCD_W-16){x=0;y+=16;}
+ 456   2              if(y>LCD_H-16){y=x=0;LCD_Clear(RED);}
+ 457   2              LCD_ShowChar(x,y,*p,0);
+ 458   2              x+=8;
+ 459   2              p++;
+ 460   2          }  
+ 461   1      }
+ 462          
+ 463          
+ 464          
+ 465          
+ 466          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   2901    ----
+   CONSTANT SIZE    =   2608    ----
+   XDATA SIZE       =      4     126
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
